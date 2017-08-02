@@ -208,7 +208,7 @@ function! s:indent_like_opening_paren(lnum)
         if starts_with_closing_paren
             let res = base
         else
-            let res = base + s:sw()
+            let res = base + get(g:, 'python_pep8_hanging_indent_width', s:sw())
         endif
     else
         " Indent to match position of opening paren.
